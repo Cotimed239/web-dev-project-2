@@ -1,18 +1,129 @@
-/* Hero: only the name, promise, and quiet navigation */
-.hero { overflow: hidden; }
-.hero-inner { z-index: 1; position: relative; }
-.hero-lines { position: absolute; inset: 0; opacity: .12; pointer-events: none;
-  background:
-    radial-gradient(ellipse 100% 22% at -10% 30%, transparent 98.5%, #9dada0 99%, transparent 99.5%),
-    radial-gradient(ellipse 105% 30% at 110% 76%, transparent 98.5%, #9dada0 99%, transparent 99.5%);
+
+/* Hero section */
+
+.hero {
+  overflow: hidden;
 }
-.hero-name { font: 500 clamp(64px, 8vw, 94px)/1.03 var(--serif); letter-spacing: -1px; margin: 0 0 18px; }
-.period { color: #728e79; }
-.hero-promise { color: var(--muted); font: italic 400 clamp(20px, 2.5vw, 28px)/1.35 var(--serif); margin: 0 0 64px; }
-.hero-cta { display: inline-flex; align-items: center; gap: 15px; padding-bottom: 8px;
-  border-bottom: 1px solid var(--line); color: var(--green);
-  font: 10px var(--mono); letter-spacing: 1.6px; transition: border-color .25s, color .25s; }
-.hero-cta:hover { border-color: var(--green); color: #0c251b; }
-.edge-link { position: absolute; bottom: 40px; right: 38px; font: 10px var(--mono); letter-spacing: 1.6px; color: var(--muted); }
-.edge-link:hover { color: var(--green); }
-@media (max-width: 700px) { .edge-link { right: 22px; bottom: 22px; } .hero-promise { margin-bottom: 46px; } }
+
+.hero-inner {
+  z-index: 1;
+  position: relative;
+}
+
+/* Subtle background lines */
+
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse 100% 22% at -10% 30%,
+      transparent 98.5%,
+      #9dada0 99%,
+      transparent 99.5%
+    ),
+    radial-gradient(
+      ellipse 105% 30% at 110% 76%,
+      transparent 98.5%,
+      #9dada0 99%,
+      transparent 99.5%
+    );
+}
+
+/* Replace the original written title with the Elevate logo */
+
+.hero-name {
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+  margin: 0 0 18px;
+}
+
+.hero-name::before {
+  content: "";
+  display: block;
+
+  width: clamp(270px, 35vw, 420px);
+  aspect-ratio: 1400 / 499;
+
+  margin: 0 auto;
+
+  background-image: url("../../images/elevate-logo.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Hide the old dot because the logo replaces the title */
+
+.period {
+  display: none;
+}
+
+/* Original tagline */
+
+.hero-promise {
+  color: var(--muted);
+
+  font: italic 400
+    clamp(20px, 2.5vw, 28px)/1.35
+    var(--serif);
+
+  margin: 0 0 64px;
+}
+
+/* Original Stay Informed link */
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid var(--line);
+  color: var(--green);
+
+  font: 10px var(--mono);
+  letter-spacing: 1.6px;
+
+  transition:
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.hero-cta:hover {
+  border-color: var(--green);
+  color: #0c251b;
+}
+
+/* Original scroll indicator */
+
+.edge-link {
+  position: absolute;
+  bottom: 40px;
+  right: 38px;
+
+  font: 10px var(--mono);
+  letter-spacing: 1.6px;
+  color: var(--muted);
+}
+
+.edge-link:hover {
+  color: var(--green);
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .edge-link {
+    right: 22px;
+    bottom: 22px;
+  }
+
+  .hero-promise {
+    margin-bottom: 46px;
+  }
+}
