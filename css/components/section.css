@@ -1,0 +1,6 @@
+/* Mission and centered editorial sections */
+.mission .narrow { max-width: 665px; }
+.mission p:not(.eyebrow):not(.mission-end) { max-width: 640px; margin: 0 auto 18px; color: #596c5f; font-size: 15px; line-height: 1.85; }
+.mission .mission-lead { font-family: var(--serif); font-size: clamp(21px, 2.3vw, 27px) !important; line-height: 1.45 !important; color: var(--green) !important; margin-bottom: 26px !important; }
+.mission-end { margin-top: 28px; color: var(--green); font-style: italic; font-family: var(--serif); font-size: 23px; }
+@media (max-width: 700px) { .mission p:not(.eyebrow):not(.mission-end) { font-size: 14px; } }

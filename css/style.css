@@ -1,0 +1,70 @@
+/* Main stylesheet: reusable components are imported from one place. */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500&display=swap");
+@import url("components/container.css");
+@import url("components/banner.css");
+@import url("components/button.css");
+@import url("components/section.css");
+@import url("components/mockup.css");
+@import url("components/focus.css");
+@import url("components/footer.css");
+
+:root {
+  --paper: #f8f7f2;
+  --green: #203c30;
+  --muted: #66766b;
+  --line: rgba(32, 60, 48, 0.14);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-snap-type: y mandatory; }
+body { margin: 0; background: var(--paper); color: var(--green); font: 15px/1.75 'Inter', Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+button, summary { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+
+.slide {
+  min-height: 100vh;
+  min-height: 100svh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 68px 24px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font: 10px/1.6 var(--mono);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
+h2 { font-size: clamp(35px, 4vw, 49px); line-height: 1.12; margin-bottom: 21px; }
+
+.next-section {
+  display: inline-block;
+  margin-top: 28px;
+  font: 10px var(--mono);
+  letter-spacing: 1.4px;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+.next-section:hover { color: var(--green); }
+
+@media (max-width: 700px), (max-height: 720px) {
+  html { scroll-snap-type: y proximity; }
+  .slide { padding: 80px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; scroll-snap-type: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

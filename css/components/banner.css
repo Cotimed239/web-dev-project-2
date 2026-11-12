@@ -1,0 +1,18 @@
+/* Hero: only the name, promise, and quiet navigation */
+.hero { overflow: hidden; }
+.hero-inner { z-index: 1; position: relative; }
+.hero-lines { position: absolute; inset: 0; opacity: .12; pointer-events: none;
+  background:
+    radial-gradient(ellipse 100% 22% at -10% 30%, transparent 98.5%, #9dada0 99%, transparent 99.5%),
+    radial-gradient(ellipse 105% 30% at 110% 76%, transparent 98.5%, #9dada0 99%, transparent 99.5%);
+}
+.hero-name { font: 500 clamp(64px, 8vw, 94px)/1.03 var(--serif); letter-spacing: -1px; margin: 0 0 18px; }
+.period { color: #728e79; }
+.hero-promise { color: var(--muted); font: italic 400 clamp(20px, 2.5vw, 28px)/1.35 var(--serif); margin: 0 0 64px; }
+.hero-cta { display: inline-flex; align-items: center; gap: 15px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--line); color: var(--green);
+  font: 10px var(--mono); letter-spacing: 1.6px; transition: border-color .25s, color .25s; }
+.hero-cta:hover { border-color: var(--green); color: #0c251b; }
+.edge-link { position: absolute; bottom: 40px; right: 38px; font: 10px var(--mono); letter-spacing: 1.6px; color: var(--muted); }
+.edge-link:hover { color: var(--green); }
+@media (max-width: 700px) { .edge-link { right: 22px; bottom: 22px; } .hero-promise { margin-bottom: 46px; } }

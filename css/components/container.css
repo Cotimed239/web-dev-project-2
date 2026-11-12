@@ -1,0 +1,3 @@
+/* Reusable responsive container */
+.container { width: min(940px, 100%); margin: 0 auto; }
+.narrow { width: min(665px, 100%); }
