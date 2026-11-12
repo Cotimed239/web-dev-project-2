@@ -1,5 +1,5 @@
 
-/* Focus section: six interactive topics */
+/* Six interactive Focus topics */
 
 .focus h2 {
   margin-bottom: 12px;
@@ -39,14 +39,12 @@
   display: none;
 }
 
-/* All six icons retain the same size and hover effect */
-
 .focus-item i {
   font-size: 31px;
   transition: color 0.25s, transform 0.25s;
 }
 
-/* FIX: Font Awesome Solid and Regular have different weights */
+/* Correct Font Awesome weights */
 
 .focus-item i.fa-solid {
   font-family: "Font Awesome 6 Free";
@@ -58,14 +56,10 @@
   font-weight: 400;
 }
 
-/* Text below each icon */
-
 .focus-item summary span {
   font: 12px/1.55 var(--mono);
   letter-spacing: 0.2px;
 }
-
-/* Keep existing hover and open colors */
 
 .focus-item:hover summary,
 .focus-item[open] summary {
@@ -75,8 +69,6 @@
 .focus-item:hover i {
   transform: translateY(-3px);
 }
-
-/* Description revealed when clicked */
 
 .focus-item p {
   max-width: 230px;
@@ -89,8 +81,6 @@
 .focus .next-section {
   margin-top: 40px;
 }
-
-/* Mobile */
 
 @media (max-width: 700px) {
   .focus-grid {
