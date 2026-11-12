@@ -10,14 +10,11 @@
   position: relative;
 }
 
-/* Subtle background lines */
-
 .hero-lines {
   position: absolute;
   inset: 0;
   opacity: 0.12;
   pointer-events: none;
-
   background:
     radial-gradient(
       ellipse 100% 22% at -10% 30%,
@@ -33,7 +30,7 @@
     );
 }
 
-/* Replace the original written title with the Elevate logo */
+/* Display Elevate logo in place of the title */
 
 .hero-name {
   font-size: 0;
@@ -45,53 +42,39 @@
 .hero-name::before {
   content: "";
   display: block;
-
   width: clamp(270px, 35vw, 420px);
   aspect-ratio: 1400 / 499;
-
   margin: 0 auto;
-
   background-image: url("../../images/elevate-logo.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-/* Hide the old dot because the logo replaces the title */
-
 .period {
   display: none;
 }
 
-/* Original tagline */
+/* Tagline */
 
 .hero-promise {
   color: var(--muted);
-
-  font: italic 400
-    clamp(20px, 2.5vw, 28px)/1.35
-    var(--serif);
-
+  font: italic 400 clamp(20px, 2.5vw, 28px)/1.35 var(--serif);
   margin: 0 0 64px;
 }
 
-/* Original Stay Informed link */
+/* Stay Informed */
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 15px;
   padding-bottom: 8px;
-
   border-bottom: 1px solid var(--line);
   color: var(--green);
-
   font: 10px var(--mono);
   letter-spacing: 1.6px;
-
-  transition:
-    border-color 0.25s,
-    color 0.25s;
+  transition: border-color 0.25s, color 0.25s;
 }
 
 .hero-cta:hover {
@@ -99,13 +82,12 @@
   color: #0c251b;
 }
 
-/* Original scroll indicator */
+/* Scroll indicator */
 
 .edge-link {
   position: absolute;
   bottom: 40px;
   right: 38px;
-
   font: 10px var(--mono);
   letter-spacing: 1.6px;
   color: var(--muted);
@@ -114,8 +96,6 @@
 .edge-link:hover {
   color: var(--green);
 }
-
-/* Mobile */
 
 @media (max-width: 700px) {
   .edge-link {
